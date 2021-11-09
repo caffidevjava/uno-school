@@ -1,7 +1,9 @@
 package com.caffidev.unoone.abstracts;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.caffidev.unoone.Game;
 import com.caffidev.unoone.enums.CardColor;
 import com.caffidev.unoone.enums.CardType;
 
@@ -24,6 +26,13 @@ public abstract class CommonCard extends ImageButton {
 
     public Integer getCardNumber() {return cardNumber;}
     
-    private static String getTexturePath(){return "not implemented";}
+    //Static i.e has instance
+    private static String getTexturePath(){
+        return "black_wildcard.png";
+        
+        //or
+        //        Game.logger.error("Could not load assets. App will exit now.");
+        //        Gdx.app.exit();
+    }
     //todo
 }
