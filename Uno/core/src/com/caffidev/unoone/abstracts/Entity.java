@@ -1,4 +1,4 @@
-package com.caffidev.unoone;
+package com.caffidev.unoone.abstracts;
 
 import java.util.UUID;
 

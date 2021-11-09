@@ -15,13 +15,14 @@ public class Game extends ApplicationAdapter {
 	// We don't need to write our own logger
 	public static final Logger logger = new Logger("Uno-one");
 	protected Framerate framerate;
+	
 	@Override
 	public void create(){
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		
+		//todo: pick a color
 		framerate = new Framerate();
 		logger.setLevel(Logger.DEBUG);
-		logger.debug("Log logged");
+		logger.debug("Logging started.");
 		
 		Player player = new Player("Kesha");
 		logger.debug(player.getUuid().toString());

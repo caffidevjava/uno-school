@@ -1,7 +1,7 @@
 package com.caffidev.unoone.enums;
 
 public enum CardType {
-    NUMBER,
+    NUMBER, //Usual card type
     SKIP,
     REVERSE,
     PLUS_TWO,
