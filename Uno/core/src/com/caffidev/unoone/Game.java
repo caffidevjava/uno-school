@@ -16,11 +16,15 @@ public class Game extends ApplicationAdapter {
 	public static final Logger logger = new Logger("Uno-one");
 	protected Framerate framerate;
 	@Override
-	public void create(){ 
+	public void create(){
+		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		
 		framerate = new Framerate();
 		logger.setLevel(Logger.DEBUG);
 		logger.debug("Log logged");
-
+		
+		Player player = new Player("Kesha");
+		logger.debug(player.getUuid().toString());
 	}
 	
 	@Override
@@ -34,7 +38,6 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		Gdx.app.debug("uno-i", "lol");
 		framerate.renderWithUpdate();
 	}
 	
