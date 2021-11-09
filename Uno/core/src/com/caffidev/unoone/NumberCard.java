@@ -7,10 +7,6 @@ import com.caffidev.unoone.enums.CardType;
 public class NumberCard extends Card {
     public NumberCard(int number, CardColor color){
         super(CardType.NUMBER, color, number);
-        if(CardUtils.validateColor(color)) {
-        }
-        if (CardUtils.validateNumber(number)) {
-        }
     }
 
     public String toString(){
