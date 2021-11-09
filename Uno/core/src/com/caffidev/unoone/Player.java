@@ -1,19 +1,20 @@
 package com.caffidev.unoone;
 
-import com.caffidev.unoone.abstracts.CommonCard;
+import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.caffidev.unoone.abstracts.Card;
 import com.caffidev.unoone.abstracts.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.smartcardio.Card;
-
 public class Player extends Entity {
     private final String name;
-    List<CommonCard> cards = new ArrayList<>();
+    protected HorizontalGroup horizontalGroup = new HorizontalGroup();
+    List<Card> cards = new ArrayList<>();
     
     public Player(String name){
         this.name = name;
+        Game.stage.addActor(horizontalGroup);
     }
     
     public void drawCards(int number){

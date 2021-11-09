@@ -31,7 +31,7 @@ public class Game extends ApplicationAdapter {
 		
 		framerate = new Framerate();
 		logger.setLevel(Logger.DEBUG);
-		logger.debug("Logging started.");
+		logger.debug("Logging is instantiated.");
 		batch = new SpriteBatch();
 		stage = new Stage();
 		Player player = new Player("Kesha");
@@ -53,6 +53,7 @@ public class Game extends ApplicationAdapter {
 		
 		batch.begin();
 		batch.draw(background, 0, 0);
+		
 		batch.end(); //todo: fix a bug with a wallpaper
 		
 		stage.act(Gdx.graphics.getDeltaTime());
