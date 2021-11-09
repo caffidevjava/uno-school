@@ -1,24 +1,40 @@
 package com.caffidev.unoone;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import java.util.logging.LogManager;
+
 public class Game extends ApplicationAdapter {
+	// We don't need to write our own logger
+	public static final Logger logger = new Logger("Uno-one");
 	protected Framerate framerate;
 	@Override
 	public void create(){ 
 		framerate = new Framerate();
+		logger.setLevel(Logger.DEBUG);
+		logger.debug("Log logged");
+
 	}
 	
 	@Override
 	public void resize(int width, int height){ 
-		
+		framerate.resize(width, height);
 	}
 	
 	@Override
-	public void render() { 
+	public void render() {
+		// Clean screen
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		Gdx.app.debug("uno-i", "lol");
 		framerate.renderWithUpdate();
 	}
 	
@@ -29,5 +45,7 @@ public class Game extends ApplicationAdapter {
 	public void resume() { }
 	
 	@Override
-	public void dispose() { }
+	public void dispose() {
+		framerate.dispose();
+	}
 }
